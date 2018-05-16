@@ -12248,15 +12248,7 @@ div#notebook {
 <ul>
 <li>What kind of establishment (customer) could each of the three samples you've chosen represent?</li>
 </ul>
-<p><strong>Hint:</strong> Examples of establishments include places like markets, cafes, delis, wholesale retailers, among many others. Avoid using names for establishments, such as saying <em>"McDonalds"</em> when describing a sample customer as a restaurant. You can use the mean values for reference to compare your samples with. The mean values are as follows:</p>
-<ul>
-<li>Fresh: 12000.2977</li>
-<li>Milk: 5796.2</li>
-<li>Grocery: 7951</li>
-<li>Frozen: 3071.9</li>
-<li>Detergents_paper: 2881.4</li>
-<li>Delicatessen: 1524.8</li>
-</ul>
+<p><strong>Hint:</strong> Examples of establishments include places like markets, cafes, delis, wholesale retailers, among many others. Avoid using names for establishments, such as saying <em>"McDonalds"</em> when describing a sample customer as a restaurant. You can use the mean values for reference to compare your samples with.</p>
 <p>Knowing this, how do your samples compare? Does that help in driving your insight into what kind of establishments they might be?</p>
 
 </div>
@@ -12267,10 +12259,22 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
+<p>The mean values are as follows:</p>
 <ul>
-<li>1st Sample: This customer buys more fresh and frozen than avergae and almost none of grocery and detergents_paper. Tihs could be a deli which has mostly sandwiches, salads and juices on menu.</li>
-<li>2nd Sample: This customer stocks up on a lot of fresh, milk, grocery, detergents. Frozen and delicatessen is also high but not as high as others on the list. This could indicate a wholesale retailer.</li>
-<li>3rd Sample: The 3rd customer is all about grocery and delicatessen. It could be a market.</li>
+<li>Fresh: 12000.2977</li>
+<li>Milk: 5796.2</li>
+<li>Grocery: 7951</li>
+<li>Frozen: 3071.9</li>
+<li>Detergents_paper: 2881.4</li>
+<li>Delicatessen: 1524.8</li>
+</ul>
+<ul>
+<li><p>1st Sample: The average fresh and frozen purchase is 12000 and 3071 respectivelu/This customer buys more fresh and frozen than average and almost none of grocery and detergents_paper. Tihs could be a deli which has mostly sandwiches, salads and juices on menu.</p>
+</li>
+<li><p>2nd Sample: Compared to the average (see above) This customer stocks up on a lot of fresh, milk, grocery, detergents. Frozen and delicatessen is also high but not as high as others on the list. This could indicate a wholesale retailer.</p>
+</li>
+<li><p>3rd Sample: The averahe fpr grocery and detergent paper is 7951 and 6747 respectively.The 3rd customer is all about grocery and detergent paper. It could be a market.</p>
+</li>
 </ul>
 
 </div>
@@ -22129,8 +22133,8 @@ ERERqVkKPCIiIiIiUrMUeEREREREpGb9BMiYovBuwDa6AAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>Segment 0 : This segment purchases more fresh and frozen. This could represent a deli which makes fresh produce.</li>
-<li>segment 1 : This segment purchases more than average milk, grocery and detergents. This could be a whole sale market.</li>
+<li>Segment 0 : The average for fresh and frozen are 12000 and 3071 respectively. This segment purchases more fresh and frozen. This could represent a deli which makes fresh produce.</li>
+<li>segment 1 : This segment purchases more than average milk, grocery and detergents compared to the average (shown above). This could be a whole sale market.</li>
 </ul>
 
 </div>
@@ -22232,7 +22236,311 @@ Sample point 2 predicted to be in Cluster 1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Customers which depend on fresh food daily may react negatively to this change. Businesses which use products with longer shelf life may react positively to this as less deliveries may lower their operational costs. The first type of customer fall under segment 0 while the second under segment 1. Thus by using the customer segments, distributor can determine which customers would react postively or negatively to change in delivery service.</p>
+<p>Changes in delivery will not affect all customers equally. Customer which depend on fresh food daily may react negatively to this change. Businesses which use products with longer shelf life may react positively to this as less deliveries may # lower their operational costs.</p>
+<p>For A/B testing, the customers can be grouped into two segments - the control group in which the delivery occurs 5 days a week and the testing group in which delivery occurs 4 days a week and see if customers react positively to it.</p>
+<p>Segmenting can be used to further improve A/B testing. Customers can be segmented based on there usage of fresh food. Customers can be put in different segments based on whether use higher or lower than average Fresh food.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fresh</th>
+      <th>Milk</th>
+      <th>Grocery</th>
+      <th>Frozen</th>
+      <th>Detergents_Paper</th>
+      <th>Delicatessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>440.000000</td>
+      <td>440.000000</td>
+      <td>440.000000</td>
+      <td>440.000000</td>
+      <td>440.000000</td>
+      <td>440.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>12000.297727</td>
+      <td>5796.265909</td>
+      <td>7951.277273</td>
+      <td>3071.931818</td>
+      <td>2881.493182</td>
+      <td>1524.870455</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>12647.328865</td>
+      <td>7380.377175</td>
+      <td>9503.162829</td>
+      <td>4854.673333</td>
+      <td>4767.854448</td>
+      <td>2820.105937</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.000000</td>
+      <td>55.000000</td>
+      <td>3.000000</td>
+      <td>25.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3127.750000</td>
+      <td>1533.000000</td>
+      <td>2153.000000</td>
+      <td>742.250000</td>
+      <td>256.750000</td>
+      <td>408.250000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>8504.000000</td>
+      <td>3627.000000</td>
+      <td>4755.500000</td>
+      <td>1526.000000</td>
+      <td>816.500000</td>
+      <td>965.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>16933.750000</td>
+      <td>7190.250000</td>
+      <td>10655.750000</td>
+      <td>3554.250000</td>
+      <td>3922.000000</td>
+      <td>1820.250000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>112151.000000</td>
+      <td>73498.000000</td>
+      <td>92780.000000</td>
+      <td>60869.000000</td>
+      <td>40827.000000</td>
+      <td>47943.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The total number of customers = 440</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Fresh</span><span class="o">&gt;</span> <span class="mi">12000</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fresh</th>
+      <th>Milk</th>
+      <th>Grocery</th>
+      <th>Frozen</th>
+      <th>Detergents_Paper</th>
+      <th>Delicatessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>158.000000</td>
+      <td>158.000000</td>
+      <td>158.000000</td>
+      <td>158.000000</td>
+      <td>158.000000</td>
+      <td>158.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>24431.753165</td>
+      <td>6136.512658</td>
+      <td>7693.253165</td>
+      <td>4341.917722</td>
+      <td>2244.702532</td>
+      <td>2202.531646</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>13487.097391</td>
+      <td>9885.775929</td>
+      <td>11148.180602</td>
+      <td>6512.467743</td>
+      <td>5084.309185</td>
+      <td>4343.146388</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>12119.000000</td>
+      <td>134.000000</td>
+      <td>3.000000</td>
+      <td>42.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>16129.000000</td>
+      <td>1484.000000</td>
+      <td>2373.000000</td>
+      <td>996.750000</td>
+      <td>240.250000</td>
+      <td>656.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>20077.000000</td>
+      <td>3539.500000</td>
+      <td>4360.500000</td>
+      <td>2426.500000</td>
+      <td>601.500000</td>
+      <td>1272.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>28168.000000</td>
+      <td>6255.250000</td>
+      <td>8421.750000</td>
+      <td>5220.750000</td>
+      <td>1887.750000</td>
+      <td>2399.250000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>112151.000000</td>
+      <td>73498.000000</td>
+      <td>92780.000000</td>
+      <td>60869.000000</td>
+      <td>40827.000000</td>
+      <td>47943.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The total number of customers buying more than average food = 158</p>
+<p>If the segment buying more than average fresh food responds positively to small change in delivery schedule, a slightly larger can be introduced.</p>
+<p>We can also study customer response for other segments for e.g. customers who are more interested in grocery etc.</p>
+<p>Thus customer segmenting can be very useful in A/B testing</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>links for AB testing:</strong></p>
+<p>You can read more on A/B testing from the following links:</p>
+<p><a href="https://en.wikipedia.org/wiki/A/B_testing">https://en.wikipedia.org/wiki/A/B_testing</a></p>
+<p><a href="https://www.quora.com/When-should-A-B-testing-not-be-trusted-to-make-decisions/answer/Edwin-Chen-1">https://www.quora.com/When-should-A-B-testing-not-be-trusted-to-make-decisions/answer/Edwin-Chen-1</a></p>
+<p><a href="http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/">http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/</a></p>
+<p><a href="http://techblog.netflix.com/2016/04/its-all-about-testing-netflix.html">http://techblog.netflix.com/2016/04/its-all-about-testing-netflix.html</a></p>
+<p><a href="https://vwo.com/ab-testing/">https://vwo.com/ab-testing/</a></p>
 
 </div>
 </div>
